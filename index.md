@@ -41,11 +41,6 @@ A future concept (Coming Soon! :slightly_smiling_face:)
 ![](https://raw.githubusercontent.com/lalitpagaria/obsei/master/images/Obsei-future-concept.png)
 
 
-## Release Progress
-Following releases are on the way -
-- [**v0.0.5**](https://github.com/lalitpagaria/obsei/projects/4): New integrations (Facebook, Whatsapp, Telegram and Slack), documentation website and Conda release
-- [**v0.1.0**](https://github.com/lalitpagaria/obsei/projects/3): DAG support, CI improvements and few more (suggestions are welcome)
-
 ## Installation
 
 ### To use as SDK
@@ -84,28 +79,22 @@ Following environment variables are useful to customize various parameters -
 - `OBSEI_SERVER_PORT`: Rest API server port (default: 9898)
 - `OBSEI_WORKER_TYPE`: Gunicorn worker type (default: uvicorn.workers.UvicornWorker)
 
-## Use cases
-`Obsei` use cases are following, but not limited to -
-- Automatic customer issue ticketing based on sentiment analysis
-- Proper tagging of ticket like login issue, signup issue, delivery issue etc for faster disposal
-- Checking effectiveness of social media marketing campaign
-- Extraction of deeper insight from feedbacks on various platforms
-- Research purpose
-
 ## Components and Integrations
 
-- **Source/Observer**: Twitter, Play Store Reviews, Apple App Store Reviews (Facebook, Instagram, Google reviews, Amazon reviews, Slack, Microsoft Team, Chat-bots etc planned in future)
-- **Analyzer/Segmenter**: Sentiment and Text classification (QA, Natural Search, FAQ, Summarization etc planned in future)
-- **Sink/Informer**: HTTP API, ElasticSearch, DailyGet, and Jira (Salesforce, Zendesk, Hubspot, Slack, Microsoft Team, etc planned in future)
+- **Source/Observer**: Twitter, Play Store Reviews, Apple App Store Reviews, Sub Reddit (Facebook, Instagram, Google reviews, Amazon reviews, Slack, Microsoft Team, Chat-bots etc planned in future)
+- **Analyzer/Segmenter**: Sentiment and Text classification (QA, Natural Search, FAQ, NER etc planned in future)
+- **Sink/Informer**: HTTP API, ElasticSearch, DailyGet, Slack and Jira (Salesforce, Zendesk, Hubspot, Slack, Microsoft Team, etc planned in future)
 - **Processor/WorkflowEngine**: Simple integration between Source, Analyser and Sink (Rich workflows using rule engine planned in future)
 - **Convertor**: Very important part, which convert data from analyzer format to the format sink understand. It is very helpful in any customizations, refer `dailyget_sink.py` and `jira_sink.py`.
 
 **Note:** In order to use some integrations you would need credentials, refer following list -
 - [Twitter](https://twitter.com/): To make authorized API call, get access from [dev portal](https://developer.twitter.com/en/apply-for-access). Read about [search api](https://developer.twitter.com/en/docs/twitter-api/tweets/search/introduction) for more details. 
 - [Play Store](https://play.google.com/): To make authorized API calls, get [service account's credentials](https://developers.google.com/identity/protocols/oauth2/service-account). Read about [review api](https://googleapis.github.io/google-api-python-client/docs/dyn/androidpublisher_v3.reviews.html) for more details.
+- [Reddit](https://www.reddit.com/): To make authorized API calls, create [client app](https://www.reddit.com/prefs/apps). For more detail refer [link](https://praw.readthedocs.io/en/latest/getting_started/authentication.html).
+- [Slack](https://slack.com/): To send message to Slack channel, get bot or user token. Refer [link](https://api.slack.com/authentication/token-types#bot).
 
 ## Model selection
-Any model listed in [Text Classification](https://huggingface.co/models?filter=text-classification) or [Zero-Shot Classification](https://huggingface.co/models?filter=zero-shot-classification) can be used in Segmenter.
+Any model listed in [Named Entity Recognition](https://huggingface.co/models?filter=token-classification), [Text Classification](https://huggingface.co/models?filter=text-classification) and [Zero-Shot Classification](https://huggingface.co/models?filter=zero-shot-classification) can be used in Segmenter.
 
 ## Examples and Screenshots
 Refer [example](https://github.com/lalitpagaria/obsei/tree/master/example) and [config](https://github.com/lalitpagaria/obsei/tree/master/config) folders for `obsei` usage and configurations.
@@ -113,45 +102,5 @@ Refer [example](https://github.com/lalitpagaria/obsei/tree/master/example) and [
 ### Jira
 ![](https://raw.githubusercontent.com/lalitpagaria/obsei/master/images/jira_screenshot.png)
 
-## Attribution
-This could not have been possible without following open source software -
-- [searchtweets-v2](https://github.com/twitterdev/search-tweets-python): For Twitter's API v2 wrapper
-- [vaderSentiment](https://github.com/cjhutto/vaderSentiment): For rule-based sentiment analysis
-- [transformers](https://github.com/huggingface/transformers): For text-classification pipeline
-- [tweet-preprocessor](https://github.com/s/preprocessor): For tweets preprocessing and cleaning
-- [atlassian-python-api](https://github.com/atlassian-api/atlassian-python-api): To interact with Jira
-- [elasticsearch](https://github.com/elastic/elasticsearch-py): To interact with Elasticsearch
-- [hydra](https://github.com/facebookresearch/hydra.git): To elegantly configuring Obsei
-- [apscheduler](https://github.com/agronholm/apscheduler): To schedule task to execute desired workflow
-- [pydantic](https://github.com/samuelcolvin/pydantic): For data validation
-- [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy): As SQL toolkit to access DB storage
-- [fastapi](https://fastapi.tiangolo.com/) & [gunicorn](https://gunicorn.org/): For HTTP server and API interface
-- [feedparser](https://github.com/kurtmckee/feedparser): To parse rss feed to fetch app store reviews
-- [google-play-scraper](https://github.com/JoMingyu/google-play-scraper): To fetch the Google Play Store review without authentication
-
-## Contribution
-Currently, we are not accepting any pull requests. If you want a feature or something doesn't work, please create an issue.
-
 ## Changelog
 Refer [releases](https://github.com/lalitpagaria/obsei/releases) and [projects](https://github.com/lalitpagaria/obsei/projects).
-
-## Citing Obsei
-If you use `obsei` in your research please use the following BibTeX entry:
-```text
-@Misc{Pagaria2020Obsei,
-  author =       {Lalit Pagaria},
-  title =        {Obsei - A workflow automation tool for text segmentation need},
-  howpublished = {Github},
-  year =         {2020},
-  url =          {https://github.com/lalitpagaria/obsei}
-}
-```
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/lalitpagaria/obsei.svg)](https://starchart.cc/lalitpagaria/obsei)
-
-## Acknowledgement
-
-We would like to thank [DailyGet](https://dailyget.in/) for continuous support and encouragement.
-Please check [DailyGet](https://dailyget.in/) out. it is a platform which can easily be configured to solve any business process automation requirements.
