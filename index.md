@@ -92,7 +92,7 @@ Following environment variables are useful to customize various parameters -
 - [Play Store](https://play.google.com/): To make authorized API calls, get [service account's credentials](https://developers.google.com/identity/protocols/oauth2/service-account). Read about [review api](https://googleapis.github.io/google-api-python-client/docs/dyn/androidpublisher_v3.reviews.html) for more details.
 - [Reddit](https://www.reddit.com/): To make authorized API calls, create [client app](https://www.reddit.com/prefs/apps). For more detail refer [link](https://praw.readthedocs.io/en/latest/getting_started/authentication.html).
 - [Slack](https://slack.com/): To send message to Slack channel, get bot or user token. Refer [link](https://api.slack.com/authentication/token-types#bot).
-- [Email]: Email read only via IMAP servers are supported. Refer [link](https://www.systoolsgroup.com/imap/) for popular IMAP servers (like for Gmail).
+- *Email*: Email read only via IMAP servers are supported. Refer [link](https://www.systoolsgroup.com/imap/) for popular IMAP servers (like for Gmail).
 
 ## Model selection
 Any model listed in [Named Entity Recognition](https://huggingface.co/models?filter=token-classification), [Text Classification](https://huggingface.co/models?filter=text-classification) and [Zero-Shot Classification](https://huggingface.co/models?filter=zero-shot-classification) can be used in Segmenter.
