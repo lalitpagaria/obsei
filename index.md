@@ -30,7 +30,7 @@
 `Obsei` is intended to be a workflow automation tool for text segmentation need. `Obsei` consist of -
  - **OBserver**, observes platform like Twitter, Facebook, App Stores, Google reviews, Amazon reviews and feed that information to,
  - **SEgmenter**, which perform text classification and sentiment analysis and feed that information to,
- - **Informer**, which send it to ticketing system, data store or other places for further action and analysis.
+ - **Informer**, which send it to ticketing system (Jira, Zendesk, etc), data store or other places for further action and analysis.
 
 Current flow -
 
@@ -82,10 +82,10 @@ Following environment variables are useful to customize various parameters -
 ## Components and Integrations
 
 - **Source/Observer**: Twitter, Play Store Reviews, Apple App Store Reviews, Reddit, Email (Facebook, Instagram, Google reviews, Amazon reviews, Slack, Microsoft Team, Chat-bots etc planned in future)
-- **Analyzer/Segmenter**: Sentiment and Text classification (QA, Natural Search, FAQ, NER etc planned in future)
-- **Sink/Informer**: HTTP API, ElasticSearch, DailyGet, Slack and Jira (Salesforce, Zendesk, Hubspot, Slack, Microsoft Team, etc planned in future)
+- **Analyzer/Segmenter**: Sentiment, Text classification and Entity extraction (QA, Natural Search, FAQ, etc are planned in future)
+- **Sink/Informer**: HTTP API, ElasticSearch, DailyGet, Slack, Zendesk and Jira (Salesforce, Hubspot, Microsoft Team, etc planned in future)
 - **Processor/WorkflowEngine**: Simple integration between Source, Analyser and Sink (Rich workflows using rule engine planned in future)
-- **Convertor**: Very important part, which convert data from analyzer format to the format sink understand. It is very helpful in any customizations, refer `dailyget_sink.py` and `jira_sink.py`.
+- **Convertor**: Very important part, which convert data from analyzer format to the format sink understand. It is very helpful in any customizations, refer `dailyget_sink.py`, `jira_sink.py` or `zendesk_sink.py`.
 
 **Note:** In order to use some integrations you would need credentials, refer following list -
 - [Twitter](https://twitter.com/): To make authorized API call, get access from [dev portal](https://developer.twitter.com/en/apply-for-access). Read about [search api](https://developer.twitter.com/en/docs/twitter-api/tweets/search/introduction) for more details. 
@@ -95,7 +95,7 @@ Following environment variables are useful to customize various parameters -
 - *Email*: Email read only via IMAP servers are supported. Refer [link](https://www.systoolsgroup.com/imap/) for popular IMAP servers (like for Gmail).
 
 ## Model selection
-Any model listed in [Named Entity Recognition](https://huggingface.co/models?filter=token-classification), [Text Classification](https://huggingface.co/models?filter=text-classification) and [Zero-Shot Classification](https://huggingface.co/models?filter=zero-shot-classification) can be used in Segmenter.
+Any model listed in [Named Entity Recognition](https://huggingface.co/models?filter=token-classification), [Text Classification](https://huggingface.co/models?filter=text-classification) and [Zero-Shot Classification](https://huggingface.co/models?filter=zero-shot-classification) can be used with Segmenter.
 
 ## Examples and Screenshots
 Refer [example](https://github.com/lalitpagaria/obsei/tree/master/example) and [config](https://github.com/lalitpagaria/obsei/tree/master/config) folders for `obsei` usage and configurations.
